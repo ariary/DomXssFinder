@@ -10,3 +10,6 @@ SURTOUT
 https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting/dom-xss
 https://github.com/wisec/domxsswiki/wiki
 
+> **Source** := JavaScript property that accepts user controlled data (eg `location.search`)
+
+> **Sink** := POtential dangerous JavaScript function or DOM object that can cause indésirable effect if attacker controlled data is pass to it (eg `eval`) 
