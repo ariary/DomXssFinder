@@ -24,7 +24,7 @@ cat [js_code_file] | fsink
 To retrieve all js code from an url **~>** [`jse`](https://github.com/ariary/JSextractor):
 ```shell
 export URL=[url]
-curl -s $URL -H "Accept: text/html" | jse -u $URL -gather-scr 2>/dev/null
+curl -s $URL -H "Accept: text/html" | jse -u $URL -gather-src 2>/dev/null
 ```
 
 Find all related shortcuts: [`bang 💥`](https://github.com/ariary/bang/blob/main/EXAMPLES.md#find-dom-xss)
