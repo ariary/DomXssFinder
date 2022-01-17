@@ -1,0 +1,22 @@
+#!/bin/bash
+
+## TODO: Enhance parent|top|frames to ctach only parent/top/frames[i].obj
+
+
+LOCATION_SOURCES="document.URL|document.documentURI|document.URLUnencoded|document.baseURI|location|location.href|location.search|location.hash|location.pathname"
+
+COOKIE_SOURCES="document.cookie"
+
+REFERER_SOURCES="document.referrer"
+
+WINDOWS_SOURCES="windows.name"
+
+HISTORY_SOURCES="history.pushState|history.replaceState"
+
+INDIRECT_SOURCES="localStorage|sessionStorage|IndexedDB|mozIndexedDB|webkitIndexedDB|msIndexedDB|Database"
+
+OTHERS_OBJ_SOURCES="event.data|onmessage|opener|parent|top|frames"
+
+SOURCES="$LOCATION_SOURCES|$COOKIE_SOURCES|$REFERER_SOURCES|$WINDOWS_SOURCES|$HISTORY_SOURCES|$INDIRECT_SOURCES|$OTHERS_OBJ_SOURCES"
+
+grep --color -E $SOURCES  /dev/stdin
