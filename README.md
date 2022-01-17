@@ -1,15 +1,35 @@
-# fsink
-Find sink in js code
+# DomXssFinder
 
+**Find sources and sinks in js code that could lead DOM XSS**
 
-https://domgo.at/cxss/sinks
-https://www.acunetix.com/blog/articles/finding-source-dom-based-xss-vulnerability-acunetix-wvs/
-https://github.com/mozilla/eslint-plugin-no-unsanitized
+> **💧 Source** := JavaScript property that accepts user controlled data (eg `location.search`)
 
-SURTOUT
-https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting/dom-xss
-https://github.com/wisec/domxsswiki/wiki
+> **🚰 Sink** := Potential dangerous JavaScript function or DOM object that can cause indésirable effect if attacker controlled data is pass to it (eg `eval`)
 
-> **Source** := JavaScript property that accepts user controlled data (eg `location.search`)
+## How
 
-> **Sink** := POtential dangerous JavaScript function or DOM object that can cause indésirable effect if attacker controlled data is pass to it (eg `eval`) 
+***> Find sources in js code:***
+
+```shell
+cat [js_code_file] | fsource
+```
+
+***> Find sinks in js code:***
+
+```shell
+cat [js_code_file] | fsink
+```
+
+***💡 Tip:***
+To retrieve all js code from an url **~>** [`jse`](https://github.com/ariary/JSextractor):
+```shell
+export URL=[url]
+curl -s $URL -H "Accept: text/html" | jse -u $URL -gather-scr 2>/dev/null
+```
+
+Find all related shortcuts: [`bang 💥`](https://github.com/ariary/bang/blob/main/EXAMPLES.md#find-dom-xss)
+## Notes
+
+See how to exploit:
+ * [hacktricks.xyz](https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting/dom-xss)
+
