@@ -11,13 +11,13 @@
 ***> Find sources in js code:***
 
 ```shell
-cat [js_code_file] | fsource
+cat [js_file] | fsource
 ```
 
 ***> Find sinks in js code:***
 
 ```shell
-cat [js_code_file] | fsink
+cat [js_file] | fsink
 ```
 
 ***💡 Tip:***
