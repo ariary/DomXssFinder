@@ -1,5 +1,24 @@
 #!/bin/bash
 
+CONTEXT=""
+while getopts ":C:" opt; do
+  case $opt in
+    C) CONTEXT="$OPTARG"
+    ;;
+    \?) echo "Invalid option -$OPTARG" >&2
+    exit 1
+    ;;
+  esac
+
+  case $OPTARG in
+    -*) echo "Option $opt needs a valid argument"
+    exit 1
+    ;;
+  esac
+done
+
+if [ -z "$CONTEXT" ]; then CONTEXT="0";fi
+
 ## TODO: Enhance parent|top|frames to ctach only parent/top/frames[i].obj
 
 
@@ -19,4 +38,4 @@ OTHERS_OBJ_SOURCES="event.data|onmessage|opener|parent|top|frames"
 
 SOURCES="$LOCATION_SOURCES|$COOKIE_SOURCES|$REFERER_SOURCES|$WINDOWS_SOURCES|$HISTORY_SOURCES|$INDIRECT_SOURCES|$OTHERS_OBJ_SOURCES"
 
-grep --color -E $SOURCES  /dev/stdin
+grep --color -E $SOURCES -C $CONTEXT   /dev/stdin
