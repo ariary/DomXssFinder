@@ -1,5 +1,24 @@
 #!/bin/bash
 
+CONTEXT=""
+while getopts ":C:" opt; do
+  case $opt in
+    C) CONTEXT="$OPTARG"
+    ;;
+    \?) echo "Invalid option -$OPTARG" >&2
+    exit 1
+    ;;
+  esac
+
+  case $OPTARG in
+    -*) echo "Option $opt needs a valid argument"
+    exit 1
+    ;;
+  esac
+done
+
+if [ -z "$CONTEXT" ]; then CONTEXT="0";fi
+
 OPEN_REDIRECT_SINKS="location|location.host|location.hostname|location.href|location.pathname|location.search|location.protocol|location.assign|location.replace|open|domElem.srcdoc|XMLHttpRequest.open|XMLHttpRequest.send|jQuery.ajax|$.ajax"
 
 COOKIE_SINKS="document.cookie"
@@ -33,4 +52,4 @@ DOS_SINKS="requestFileSystem|RegExp"
 ##TODO: DOM clobbering
 SINKS="$OPEN_REDIRECT_SINKS|$COOKIE_SINKS|$JS_SINKS|$DOCUMENT_DOMAIN_SINKS|$WEBSOCKET_SINKS|$LINK_SINKS|$AJAX_REQUEST_SINKS|$LOCAL_FILE_PATH_SINKS|$SQL_SINKS|$HTML5_SINKS|$XPATH_SINKS|$JSON_SINKS|$WEB_MESSAGE_SINKS|$DOM_DATA_SINKS|$DOS_SINKS"
 
-grep --color -E $SINK  /dev/stdin
+grep --color -E $SINKS -C $CONTEXT /dev/stdin
