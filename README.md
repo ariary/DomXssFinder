@@ -29,6 +29,8 @@ curl -s $URL -H "Accept: text/html" | jse -u $URL -gather-src 2>/dev/null
 
 Find all related shortcuts: [`bang 💥`](https://github.com/ariary/bang/blob/main/EXAMPLES.md#find-dom-xss)
 
+***💡 Tip 2:***
+Use `-C [NUM]` parameter to get more context when source/sink has been found (Print `[NUM]` lines of output context)
 ## Get ready !
 ```shell
 curl -s -lO -L https://github.com/ariary/DomXssFinder/releases/latest/download/fsink 
