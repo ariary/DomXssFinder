@@ -4,7 +4,7 @@
 
 > **💧 Source** := JavaScript property that accepts user controlled data (eg `location.search`)
 
-> **🚰 Sink** := Potential dangerous JavaScript function or DOM object that can cause indésirable effect if attacker controlled data is pass to it (eg `eval`)
+> **🚰 Sink** := Potential dangerous JavaScript function or DOM object that can cause indesirable effect if attacker controlled data is pass to it (eg `eval`)
 
 ## How ?
 
