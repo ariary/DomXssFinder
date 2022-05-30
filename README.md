@@ -1,6 +1,6 @@
 # DomXssFinder
 
-**Find sources and sinks in js code that could lead DOM XSS**
+**Find sources and sinks in js code that could lead to DOM XSS**
 
 > **💧 Source** := JavaScript property that accepts user controlled data (eg `location.search`)
 
