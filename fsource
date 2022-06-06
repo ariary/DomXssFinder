@@ -34,7 +34,7 @@ HISTORY_SOURCES="history.pushState|history.replaceState"
 
 INDIRECT_SOURCES="localStorage|sessionStorage|IndexedDB|mozIndexedDB|webkitIndexedDB|msIndexedDB|Database"
 
-OTHERS_OBJ_SOURCES="event.data|onmessage|opener|parent|top|frames|getElementById"
+OTHERS_OBJ_SOURCES="event.data|onmessage|opener|parent|top|frames|getElementById|getElementsByClassName|getElementsByName|getElementsByTagName|getElementsByTagNameNS"
 
 SOURCES="$LOCATION_SOURCES|$COOKIE_SOURCES|$REFERER_SOURCES|$WINDOWS_SOURCES|$HISTORY_SOURCES|$INDIRECT_SOURCES|$OTHERS_OBJ_SOURCES"
 
