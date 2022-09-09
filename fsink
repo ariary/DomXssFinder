@@ -45,7 +45,7 @@ JSON_SINKS="JSON.parse|jQuery.parseJSON|$.parseJSON"
 
 WEB_MESSAGE_SINKS="postMessage"
 
-DOM_DATA_SINKS=".src|.text|.textContent|.innerText|.setAttribute|.search|.outerText|.value|\.name|.target|.method|.type|.backgroundImage|.cssText|.codebase|document.title|document.implementation.createHTMLDocument|history.pushState|history.replaceState"
+DOM_DATA_SINKS=".src|.text|.textContent|.innerText|.innerHTML|.setAttribute|.search|.outerText|.value|\.name|.target|.method|.type|.backgroundImage|.cssText|.codebase|document.title|document.implementation.createHTMLDocument|history.pushState|history.replaceState"
 
 DOS_SINKS="requestFileSystem|RegExp"
 
