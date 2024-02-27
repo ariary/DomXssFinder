@@ -28,7 +28,7 @@ COOKIE_SOURCES="document.cookie"
 
 REFERER_SOURCES="document.referrer"
 
-WINDOWS_SOURCES="windows.name"
+WINDOWS_SOURCES="window.name"
 
 HISTORY_SOURCES="history.pushState|history.replaceState"
 
